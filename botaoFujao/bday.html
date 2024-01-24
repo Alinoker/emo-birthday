@@ -17,7 +17,7 @@
         }
 
         .birthday-container {
-            position: relative;
+            position: sticky;
             width: 500px;
             height: 500px;
             margin: auto;
@@ -31,42 +31,71 @@
 
         .image-caption{
             position: absolute;
-            top: 50%; /*center the text vertically */
+            top: 91%; /*my message lower or up */
             transform: translateY(-50%);
-            left:0
-            width: 100%;
+            left: 0%;
+            width: 80%;
             font-family: 'Permanent Marker', cursive;
-            color: white;
+            color: #C70039;
             padding: 10px;
             margin: 0;
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .address {
-            position: absolute;
-            bottom: -130px; /* goes down*/
-            left: 90px;
-            color: white;
+        #Yes {
+            height: 40px;
+            background-color: #C70039;
+            border: 2px solid white;
+            border-radius: 10px;
+            color:white;
+            margin-right: -10px;
         }
+
+        #No {
+            height: 40px;
+            background-color: #C70039;
+            border: 2px solid white;
+            border-radius: 10px;
+            color:white;    
+            margin-left: 10px;
+        }
+
     </style>
 </head>
 <body>
     <div class="birthday-container">
         <img class="birthday-image" src="goth.jpg" alt="Goth Image">
-        <p class="image-caption">
-            EMO PARTY <br>
-            Join us to celebrate my 30th birthday <br><br>
-
+        
+        <div class="image-caption">
             Will you attend <br>
-            Aline's EMO party<br>
+            Aline's EMO birthday<br>
             wearing an EMO outfit? <br><br>
-        </p>
 
-        <p class="address">
-            <b>SATURDAY<br>
-            JUNE 1st 5PM <br></b>
-            76 Burnell Green <br> 
-            D17P230 <br><br>            
-        </p>
+            <button id="Yes">Hell Yeah! </button>
+            <button id="No"> No I rather cry</button>           
+        </div>
     </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("No")
+        
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+            
+            var maxX = larguraJanela - botaoNao.offsetWidth;
+            var maxY = alturaJanela - botaoNao.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatorioX + "px";
+            botaoNao.style.top = aleatorioY + "px";
+
+
+        }
+    </script>
+
 </body>
 </html>
