@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aline's 30 Bday</title>
@@ -17,7 +18,7 @@
         }
 
         .birthday-container {
-            position: relative;
+            position: sticky;
             width: 500px;
             height: 500px;
             margin: auto;
@@ -31,42 +32,51 @@
 
         .image-caption{
             position: absolute;
-            top: 50%; /*center the text vertically */
+            top: 91%; /*my message lower or up */
             transform: translateY(-50%);
-            left:0
-            width: 100%;
+            left: 0%;
+            width: 80%;
             font-family: 'Permanent Marker', cursive;
-            color: white;
+            color: #C70039;
             padding: 10px;
             margin: 0;
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .address {
-            position: absolute;
-            bottom: -130px; /* goes down*/
-            left: 90px;
-            color: white;
+        #sim {
+            height: 40px;
+            background-color: #C70039;
+            border: 2px solid white;
+            border-radius: 10px;
+            color:white;
+            margin-right: -10px;
+        }
+
+        #nao {
+            height: 40px;
+            background-color: #C70039;
+            border: 2px solid white;
+            border-radius: 10px;
+            color:white;    
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="birthday-container">
         <img class="birthday-image" src="goth.jpg" alt="Goth Image">
-        <p class="image-caption">
-            EMO PARTY <br>
-            Join us to celebrate my 30th birthday <br><br>
-
+        
+        <div class="image-caption">
             Will you attend <br>
-            Aline's EMO party<br>
+            Aline's EMO birthday<br>
             wearing an EMO outfit? <br><br>
-        </p>
-
-        <p class="address">
-            <b>SATURDAY<br>
-            JUNE 1st 5PM <br></b>
-            76 Burnell Green <br> 
-            D17P230 <br><br>            
-        </p>
+            <button id="sim">Hell Yeah! </button>
+            <button id="nao"> No </button> 
+        </div>
     </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
