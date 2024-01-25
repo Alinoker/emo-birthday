@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aline's 30 Bday</title>
@@ -43,7 +44,7 @@
             font-weight: bold;
         }
 
-        #Yes {
+        #sim {
             height: 40px;
             background-color: #C70039;
             border: 2px solid white;
@@ -52,7 +53,7 @@
             margin-right: -10px;
         }
 
-        #No {
+        #nao {
             height: 40px;
             background-color: #C70039;
             border: 2px solid white;
@@ -60,7 +61,6 @@
             color:white;    
             margin-left: 10px;
         }
-
     </style>
 </head>
 <body>
@@ -71,31 +71,12 @@
             Will you attend <br>
             Aline's EMO birthday<br>
             wearing an EMO outfit? <br><br>
-
-            <button id="Yes">Hell Yeah! </button>
-            <button id="No"> No </button>           
+            <button id="sim">Hell Yeah! </button>
+            <button id="nao"> No </button> 
         </div>
     </div>
 
-    <script>
-        function fuja(){
-            var botaoNao = document.getElementById("No")
-        
-            var larguraJanela = window.innerWidth;
-            var alturaJanela = window.innerHeight;
-            
-            var maxX = larguraJanela - botaoNao.offsetWidth;
-            var maxY = alturaJanela - botaoNao.offsetHeight;
-
-            var aleatorioX = Math.floor(Math.random() * maxX);
-            var aleatorioY = Math.floor(Math.random() * maxY);
-
-            botaoNao.style.left = aleatorioX + "px";
-            botaoNao.style.top = aleatorioY + "px";
-
-
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
