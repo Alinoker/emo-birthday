@@ -1,11 +1,11 @@
 # emo-birthday
 Birthday invitation where the user has a playful dynamic to the webpage
 
-By clicking the button (NO)
+By (trying) to click the button (NO)
 the button moves into different positions
 
-Another highlight 
-The button (yes)
-directs the user into a YT link
+Another highlight:
+The button (YES)
+directs the user into a funny YouTube link
 
 He algo gets to enjoy a Simple Plan music
