@@ -1,5 +1,7 @@
-function fuja(){
-    var botaoNao = document.getElementById("No")
+
+
+/*function fuja(){
+    var botaoNao = document.getElementById("nao");
 
     var larguraJanela = window.innerWidth;
     var alturaJanela = window.innerHeight;
@@ -10,6 +12,7 @@ function fuja(){
     var aleatorioX = Math.floor(Math.random() * maxX);
     var aleatorioY = Math.floor(Math.random() * maxY);
 
+    botaoNao.style.position = "absolute";
     botaoNao.style.left = aleatorioX + "px";
     botaoNao.style.top = aleatorioY + "px";
-}
+}*/

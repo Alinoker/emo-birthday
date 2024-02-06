@@ -19,7 +19,8 @@
 
         .birthday-container {
             position: sticky;
-            width: 500px;
+            width: 80%; /*use % instead of pixels*/
+            max-width: 500px; /*max-width to prevent becoming too wide on larger screens*/
             height: 500px;
             margin: auto;
         }
@@ -28,55 +29,79 @@
             display: block;
             width: 100%;
             height: auto;
+            box-shadow: 0 0 30px 10px;
+
         }
 
         .image-caption{
             position: absolute;
-            top: 91%; /*my message lower or up */
+            top: 95%; /*my message lower or up */
             transform: translateY(-50%);
             left: 0%;
-            width: 80%;
-            font-family: 'Permanent Marker', cursive;
-            color: #C70039;
-            padding: 10px;
+            width: 83%;
+            font-family: 'Permanent Marker', cursive, sans-serif; /*sans-serif if font fails to load*/
+            color: #1a151a;
+            padding: 14px;
             margin: 0;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
         }
 
         #sim {
             height: 40px;
             background-color: #C70039;
-            border: 2px solid white;
-            border-radius: 10px;
-            color:white;
+            border: 2px solid black;
+            border-radius: 15px;
+            color:black;
             margin-right: -10px;
+            box-shadow: 5px 5px 5px black, 
+                        5px 5px 5px red;
+
         }
 
         #nao {
             height: 40px;
             background-color: #C70039;
-            border: 2px solid white;
-            border-radius: 10px;
-            color:white;    
+            border: 2px solid black;
+            border-radius: 15px;
+            color:black;    
             margin-left: 10px;
+            box-shadow: 5px 5px 5px black, 
+                        5px 5px 5px red;
+
         }
     </style>
 </head>
 <body>
     <div class="birthday-container">
-        <img class="birthday-image" src="images/goth.jpg" alt="Goth Image">
+
+        <audio controls autoplay>
+            <source src="file:///C:/Users/aline/repos/emo-birthday/simpleplan.mp3" type="audio/mp3">
+            you're not emo enough that's why your browse doesn't support this audio.
+        </audio>
+        <img class="birthday-image" src="images/goth.jpg" alt="Avril Lavigne Image">
         
         <div class="image-caption">
             Will you attend <br>
             Aline's EMO birthday<br>
             wearing an EMO outfit? <br><br>
             <button id="sim">Hell Yeah! </button>
-            <button id="nao"> No </button> 
+            <button id="nao"> No >.<'' </button> 
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var naoButton = document.getElementById('nao');
 
+            var leftPosition = Math.floor(math.random() * window.innerWidth);
+            var topPosition = Math.floor(Math.random() * window.innerHeight);
+            naoButton.style.position = 'absolute';
+            naoButton.style.left = leftPosition + 'px';
+            naoButton.style.top = topPosition + 'px';
+        }
+    </script>
+    //https://www.youtube.com/watch?v=hB991gO9UbQ 
+}
 </body>
 </html>
