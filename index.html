@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aline's 30 Bday</title>
 
@@ -47,7 +48,19 @@
             font-weight: bold;
         }
 
-        #sim {
+        /*.button {  /*both buttons 
+            height: 40px;
+            background-color: #C70039;
+            border: 2px solid black;
+            border-radius: 15px;
+            color: black;
+            box-shadow: 5px 5px 5px black, 
+                        5px 5px 5px red;
+             margin: 0 10px;
+            margin: 10px; 
+            cursor: pointer; */
+
+         #yesbutton {
             height: 40px;
             background-color: #C70039;
             border: 2px solid black;
@@ -56,10 +69,9 @@
             margin-right: -10px;
             box-shadow: 5px 5px 5px black, 
                         5px 5px 5px red;
-
         }
 
-        #nao {
+        #nobutton {
             height: 40px;
             background-color: #C70039;
             border: 2px solid black;
@@ -68,16 +80,15 @@
             margin-left: 10px;
             box-shadow: 5px 5px 5px black, 
                         5px 5px 5px red;
-
-        }
+        }  
     </style>
 </head>
+
 <body>
     <div class="birthday-container">
-
         <audio controls autoplay>
             <source src="file:///C:/Users/aline/repos/emo-birthday/simpleplan.mp3" type="audio/mp3">
-            you're not emo enough that's why your browse doesn't support this audio.
+            you're not EMO enough that's why your browser doesn't support this audio.
         </audio>
         <img class="birthday-image" src="images/goth.jpg" alt="Avril Lavigne Image">
         
@@ -85,23 +96,44 @@
             Will you attend <br>
             Aline's EMO birthday<br>
             wearing an EMO outfit? <br><br>
-            <button id="sim">Hell Yeah! </button>
-            <button id="nao"> No >.<'' </button> 
+            <button id="yesbutton">Hell Yeah! </button>
+            <button id="nobutton"> No >.<'' </button> 
         </div>
     </div>
+    
+    
+    <a href="https://www.youtube.com/watch?v=hB991gO9UbQ" id="yesbutton"> Sim! </a>
+    <script>     
+        document.getElementById("yesbutton").addEventListener("click", function(){
+            window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
+        });
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var naoButton = document.getElementById('nao');
+        document.getElementById("nobutton").addEventListener("click", fuja);
+            function fuja() {
+                var botaoNao = document.querySelector("#nobutton");
+                //var botaoNao =  document.getElementById("nao");
 
-            var leftPosition = Math.floor(math.random() * window.innerWidth);
-            var topPosition = Math.floor(Math.random() * window.innerHeight);
-            naoButton.style.position = 'absolute';
-            naoButton.style.left = leftPosition + 'px';
-            naoButton.style.top = topPosition + 'px';
+                var larguraJanela = window.innerWidth;
+                var alturaJanela =  window.innerHeight;
+
+                var maxX = larguraJanela - botaoNao.offsetWidth;
+                var maxY = alturaJanela - botaoNao.offsetHeight;
+
+                var aleatorioX = Math.floor(Math.random() * maxX);
+                var aleatorioY = Math.floor(Math.random() * maxY);
+
+                botaoNao.style.left = aleatorioX + "px";
+                botaoNao.style.top = aleatorioY + "px";
+            }
+
+        //it opens at the top of the page
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
-    </script>
-    //https://www.youtube.com/watch?v=hB991gO9UbQ 
-}
+        window.onload = scrollToTop;                
+        </script>
 </body>
 </html>
