@@ -72,6 +72,7 @@
         }
 
         #nobutton {
+            position: absolute;
             height: 40px;
             background-color: #C70039;
             border: 2px solid black;
@@ -101,18 +102,20 @@
         </div>
     </div>
     
-    
     <a href="https://www.youtube.com/watch?v=hB991gO9UbQ" id="yesbutton"> Sim! </a>
     <script>     
         document.getElementById("yesbutton").addEventListener("click", function(){
-            window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
+           
+    window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
         });
 
         document.getElementById("nobutton").addEventListener("click", fuja);
             function fuja() {
+               
+                
                 var botaoNao = document.querySelector("#nobutton");
                 //var botaoNao =  document.getElementById("nao");
-
+                console.log(botaoNao) 
                 var larguraJanela = window.innerWidth;
                 var alturaJanela =  window.innerHeight;
 
