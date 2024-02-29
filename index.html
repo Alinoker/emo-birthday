@@ -109,13 +109,12 @@
     window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
         });
 
-        document.getElementById("nobutton").addEventListener("click", fuja);
+        document.getElementById("nobutton").addEventListener("mouseenter", fuja);
             function fuja() {
-               
-                
+
                 var botaoNao = document.querySelector("#nobutton");
                 //var botaoNao =  document.getElementById("nao");
-                console.log(botaoNao) 
+
                 var larguraJanela = window.innerWidth;
                 var alturaJanela =  window.innerHeight;
 
@@ -127,6 +126,8 @@
 
                 botaoNao.style.left = aleatorioX + "px";
                 botaoNao.style.top = aleatorioY + "px";
+
+                
             }
 
         //it opens at the top of the page
