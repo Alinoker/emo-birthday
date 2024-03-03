@@ -79,8 +79,9 @@
             border-radius: 15px;
             color:black;    
             margin-left: 10px;
-            box-shadow: 5px 5px 5px black, 
-                        5px 5px 5px red;
+            box-shadow: 5px 5px 5px black,5px 5px 5px red;
+           /*transition: left 0.2s ease, top 0.2s ease; /*Add animation to the button's movement*/
+           transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), top 1s cubic-bezier(0.25, 0.1, 0.25, 1);  
         }  
     </style>
 </head>
@@ -103,18 +104,43 @@
     </div>
     
     <a href="https://www.youtube.com/watch?v=hB991gO9UbQ" id="yesbutton"> Sim! </a>
-    <script>     
+    <script>   
+        //yesbutton with a YT link  
         document.getElementById("yesbutton").addEventListener("click", function(){
-           
-    window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
+        window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
         });
 
-        document.getElementById("nobutton").addEventListener("mouseenter", fuja);
+    //nobutton
+    //button run away when user gets close to it, event listener triggers the fuja function when the mouse enters the proximity of the button. to achieve this by calculating the distance between the mouse cursor and the button, and then triggering the fuja function when the distance is below a certain threshold.
+    
+    document.getElementById("nobutton").addEventListener("mouseenter", function() {
+    fuja();
+    }); 
+
+    //I need to study this option before delete it
+//     document.getElementById("nobutton").addEventListener("mousemove", function(event) {
+//     var button = document.getElementById("nobutton");
+//     var buttonRect = button.getBoundingClientRect();
+
+//     var buttonCenterX = buttonRect.left + button.offsetWidth / 2;
+//     var buttonCenterY = buttonRect.top + button.offsetHeight / 2;
+
+//     var mouseX = event.clientX;
+//     var mouseY = event.clientY;
+
+//     var distance = Math.sqrt(Math.pow(mouseX - buttonCenterX, 2) + Math.pow(mouseY - buttonCenterY, 2));
+
+//     // Define a threshold for the distance
+//     var proximityThreshold = 100; // Adjust this threshold as needed
+
+//     // If the distance is below the threshold, trigger the fuja function
+//     if (distance < proximityThreshold) {
+//         fuja();
+//     }
+// });           
+
             function fuja() {
-
                 var botaoNao = document.querySelector("#nobutton");
-                //var botaoNao =  document.getElementById("nao");
-
                 var larguraJanela = window.innerWidth;
                 var alturaJanela =  window.innerHeight;
 
@@ -126,8 +152,6 @@
 
                 botaoNao.style.left = aleatorioX + "px";
                 botaoNao.style.top = aleatorioY + "px";
-
-                
             }
 
         //it opens at the top of the page
