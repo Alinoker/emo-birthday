@@ -18,7 +18,7 @@
             color: white;
         }
 
-        .birthday-container {
+         .birthday-container {
             position: sticky;
             width: 80%; /*use % instead of pixels*/
             max-width: 500px; /*max-width to prevent becoming too wide on larger screens*/
@@ -36,29 +36,17 @@
 
         .image-caption{
             position: absolute;
-            top: 95%; /*my message lower or up */
-            transform: translateY(-50%);
-            left: 0%;
+            top: 86%; /*my message lower or up */
+            /*transform: translateY(-50%); //O `fixed` do #nobutton nao funciona se o parent tiver `transform`*/ 
+            left: -11%;
             width: 83%;
             font-family: 'Permanent Marker', cursive, sans-serif; /*sans-serif if font fails to load*/
             color: #1a151a;
             padding: 14px;
             margin: 0;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
-
-        /*.button {  /*both buttons 
-            height: 40px;
-            background-color: #C70039;
-            border: 2px solid black;
-            border-radius: 15px;
-            color: black;
-            box-shadow: 5px 5px 5px black, 
-                        5px 5px 5px red;
-             margin: 0 10px;
-            margin: 10px; 
-            cursor: pointer; */
 
          #yesbutton {
             height: 40px;
@@ -66,22 +54,23 @@
             border: 2px solid black;
             border-radius: 15px;
             color:black;
-            margin-right: -10px;
+            margin-right: 162px;
             box-shadow: 5px 5px 5px black, 
                         5px 5px 5px red;
+            font-weight: bolder;
         }
-
         #nobutton {
-            position: absolute;
+            position: fixed; /* */
             height: 40px;
             background-color: #C70039;
             border: 2px solid black;
             border-radius: 15px;
             color:black;    
-            margin-left: 10px;
+            margin-left: -120px;
             box-shadow: 5px 5px 5px black,5px 5px 5px red;
-           /*transition: left 0.2s ease, top 0.2s ease; /*Add animation to the button's movement*/
-           transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), top 1s cubic-bezier(0.25, 0.1, 0.25, 1);  
+            transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), top 1s cubic-bezier(0.25, 0.1, 0.25, 1);  
+            font-weight: bolder;
+
         }  
     </style>
 </head>
@@ -97,9 +86,13 @@
         <div class="image-caption">
             Will you attend <br>
             Aline's EMO birthday<br>
-            wearing an EMO outfit? <br><br>
+            wearing an EMO outfit? <br>
             <button id="yesbutton">Hell Yeah! </button>
-            <button id="nobutton"> No >.<'' </button> 
+            <button id="nobutton"> No T.T </button> 
+            <br>
+            Alinoka's house <br>
+             01/06/2024<br>
+           
         </div>
     </div>
     
@@ -110,58 +103,33 @@
         window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
         });
 
-    //nobutton
-    //button run away when user gets close to it, event listener triggers the fuja function when the mouse enters the proximity of the button. to achieve this by calculating the distance between the mouse cursor and the button, and then triggering the fuja function when the distance is below a certain threshold.
-    
-    document.getElementById("nobutton").addEventListener("mouseenter", function() {
-    fuja();
-    }); 
+document.getElementById("nobutton").addEventListener("mousemove", fuja);
+function fuja() {
+    var botaoNao = document.querySelector("#nobutton");
+    var larguraJanela = window.innerWidth;
+    var alturaJanela = window.innerHeight;
 
-    //I need to study this option before delete it
-//     document.getElementById("nobutton").addEventListener("mousemove", function(event) {
-//     var button = document.getElementById("nobutton");
-//     var buttonRect = button.getBoundingClientRect();
+    var botaoNaoWidth = botaoNao.offsetWidth;
+    var botaoNaoHeight = botaoNao.offsetHeight;
 
-//     var buttonCenterX = buttonRect.left + button.offsetWidth / 2;
-//     var buttonCenterY = buttonRect.top + button.offsetHeight / 2;
+    var maxX = larguraJanela - botaoNao.offsetWidth;
+    var maxY = alturaJanela - botaoNao.offsetHeight;
 
-//     var mouseX = event.clientX;
-//     var mouseY = event.clientY;
+    var aleatorioX = Math.floor(Math.random() * (maxX - botaoNaoWidth + 1)); //button width
+    var aleatorioY = Math.floor(Math.random() * (maxY - botaoNaoHeight + 1)); //height
 
-//     var distance = Math.sqrt(Math.pow(mouseX - buttonCenterX, 2) + Math.pow(mouseY - buttonCenterY, 2));
+    botaoNao.style.left = aleatorioX + "px";
+    botaoNao.style.top = aleatorioY + "px";
+}
 
-//     // Define a threshold for the distance
-//     var proximityThreshold = 100; // Adjust this threshold as needed
-
-//     // If the distance is below the threshold, trigger the fuja function
-//     if (distance < proximityThreshold) {
-//         fuja();
-//     }
-// });           
-
-            function fuja() {
-                var botaoNao = document.querySelector("#nobutton");
-                var larguraJanela = window.innerWidth;
-                var alturaJanela =  window.innerHeight;
-
-                var maxX = larguraJanela - botaoNao.offsetWidth;
-                var maxY = alturaJanela - botaoNao.offsetHeight;
-
-                var aleatorioX = Math.floor(Math.random() * maxX);
-                var aleatorioY = Math.floor(Math.random() * maxY);
-
-                botaoNao.style.left = aleatorioX + "px";
-                botaoNao.style.top = aleatorioY + "px";
-            }
-
-        //it opens at the top of the page
-        function scrollToTop() {
+    //it opens at the top of the page
+    function scrollToTop() {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         }
-        window.onload = scrollToTop;                
-        </script>
+    window.onload = scrollToTop;                
+    </script>
 </body>
 </html>
