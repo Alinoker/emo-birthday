@@ -1,135 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Permanent+Marker"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aline's 30 Bday</title>
 
     <style>
-        body {
-            background: url('images/wall.jpg') center center fixed;
-            background-size: 100%; /* my 2nd pic cover all the body element */
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            text-align: center;
-            color: white;
-        }
+      body {
+        background: url("images/wall.jpg") center center fixed;
+        background-size: 100%; /* my 2nd pic cover all the body element */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        color: white;
+      }
 
-         .birthday-container {
-            position: sticky;
-            width: 80%; /*use % instead of pixels*/
-            max-width: 500px; /*max-width to prevent becoming too wide on larger screens*/
-            height: 500px;
-            margin: auto;
-        }
+      .birthday-container {
+        position: sticky;
+        width: 80%; /*use % instead of pixels*/
+        max-width: 500px; /*max-width to prevent becoming too wide on larger screens*/
+        height: 500px;
+        margin: auto;
+      }
 
-        .birthday-image {
-            display: block;
-            width: 100%;
-            height: auto;
-            box-shadow: 0 0 30px 10px;
+      .birthday-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        box-shadow: 0 0 30px 10px;
+      }
 
-        }
+      .image-caption {
+        position: absolute;
+        top: 86%; /*my message lower or up */
+        /*transform: translateY(-50%); //O `fixed` do #nobutton nao funciona se o parent tiver `transform`*/
+        left: -11%;
+        width: 83%;
+        font-family: "Permanent Marker", cursive, sans-serif; /*sans-serif if font fails to load*/
+        color: #1a151a;
+        padding: 14px;
+        margin: 0;
+        font-size: 22px;
+        font-weight: bold;
+      }
 
-        .image-caption{
-            position: absolute;
-            top: 86%; /*my message lower or up */
-            /*transform: translateY(-50%); //O `fixed` do #nobutton nao funciona se o parent tiver `transform`*/ 
-            left: -11%;
-            width: 83%;
-            font-family: 'Permanent Marker', cursive, sans-serif; /*sans-serif if font fails to load*/
-            color: #1a151a;
-            padding: 14px;
-            margin: 0;
-            font-size: 22px;
-            font-weight: bold;
-        }
-
-         #yesbutton {
-            height: 40px;
-            background-color: #C70039;
-            border: 2px solid black;
-            border-radius: 15px;
-            color:black;
-            margin-right: 162px;
-            box-shadow: 5px 5px 5px black, 
-                        5px 5px 5px red;
-            font-weight: bolder;
-        }
-        #nobutton {
-            position: fixed; /* */
-            height: 40px;
-            background-color: #C70039;
-            border: 2px solid black;
-            border-radius: 15px;
-            color:black;    
-            margin-left: -120px;
-            box-shadow: 5px 5px 5px black,5px 5px 5px red;
-            transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1), top 1s cubic-bezier(0.25, 0.1, 0.25, 1);  
-            font-weight: bolder;
-
-        }  
+      #yesbutton {
+        height: 40px;
+        background-color: #c70039;
+        border: 2px solid black;
+        border-radius: 15px;
+        color: black;
+        margin-right: 162px;
+        box-shadow: 5px 5px 5px black, 5px 5px 5px red;
+        font-weight: bolder;
+      }
+      #nobutton {
+        position: fixed; /* */
+        height: 40px;
+        background-color: #c70039;
+        border: 2px solid black;
+        border-radius: 15px;
+        color: black;
+        margin-left: -120px;
+        box-shadow: 5px 5px 5px black, 5px 5px 5px red;
+        transition: left 0.2s cubic-bezier(0.25, 0.1, 0.25, 1),
+          top 1s cubic-bezier(0.25, 0.1, 0.25, 1);
+        font-weight: bolder;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="birthday-container">
-        <audio controls autoplay>
-            <source src="file:///C:/Users/aline/repos/emo-birthday/simpleplan.mp3" type="audio/mp3">
-            you're not EMO enough that's why your browser doesn't support this audio.
-        </audio>
-        <img class="birthday-image" src="images/goth.jpg" alt="Avril Lavigne Image">
-        
-        <div class="image-caption">
-            Will you attend <br>
-            Aline's EMO birthday<br>
-            wearing an EMO outfit? <br>
-            <button id="yesbutton">Hell Yeah! </button>
-            <button id="nobutton"> No T.T </button> 
-            <br>
-            Alinoka's house <br>
-             01/06/2024<br>
-           
-        </div>
+      <audio controls autoplay>
+        <source
+          src="file:///C:/Users/aline/repos/emo-birthday/simpleplan.mp3"
+          type="audio/mp3"
+        />
+        you're not EMO enough that's why your browser doesn't support this
+        audio.
+      </audio>
+      <img
+        class="birthday-image"
+        src="images/goth.jpg"
+        alt="Avril Lavigne Image"
+      />
+
+      <div class="image-caption">
+        Will you attend <br />
+        Aline's EMO birthday<br />
+        wearing an EMO outfit? <br />
+        <button id="yesbutton">Hell Yeah!</button>
+        <button id="nobutton">No T.T</button>
+        <br />
+        Alinoka's house <br />
+        01/06/2024<br />
+        =^.^=
+      </div>
     </div>
-    
-    <a href="https://www.youtube.com/watch?v=hB991gO9UbQ" id="yesbutton"> Sim! </a>
-    <script>   
-        //yesbutton with a YT link  
-        document.getElementById("yesbutton").addEventListener("click", function(){
-        window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
+
+    <a href="https://www.youtube.com/watch?v=hB991gO9UbQ" id="yesbutton">
+      Sim!
+    </a>
+    <script>
+      //yesbutton with a YT link
+      document
+        .getElementById("yesbutton")
+        .addEventListener("click", function () {
+          window.open("https://www.youtube.com/watch?v=hB991gO9UbQ", "_blank");
         });
 
-document.getElementById("nobutton").addEventListener("mousemove", fuja);
-function fuja() {
-    var botaoNao = document.querySelector("#nobutton");
-    var larguraJanela = window.innerWidth;
-    var alturaJanela = window.innerHeight;
+      document.getElementById("nobutton").addEventListener("mousemove", fuja);
+      function fuja() {
+        var botaoNao = document.querySelector("#nobutton");
+        var larguraJanela = window.innerWidth;
+        var alturaJanela = window.innerHeight;
 
-    var botaoNaoWidth = botaoNao.offsetWidth;
-    var botaoNaoHeight = botaoNao.offsetHeight;
+        var botaoNaoWidth = botaoNao.offsetWidth;
+        var botaoNaoHeight = botaoNao.offsetHeight;
 
-    var maxX = larguraJanela - botaoNao.offsetWidth;
-    var maxY = alturaJanela - botaoNao.offsetHeight;
+        var maxX = larguraJanela - botaoNao.offsetWidth;
+        var maxY = alturaJanela - botaoNao.offsetHeight;
 
-    var aleatorioX = Math.floor(Math.random() * (maxX - botaoNaoWidth + 1)); //button width
-    var aleatorioY = Math.floor(Math.random() * (maxY - botaoNaoHeight + 1)); //height
+        var aleatorioX = Math.floor(Math.random() * (maxX - botaoNaoWidth + 1)); //button width
+        var aleatorioY = Math.floor(
+          Math.random() * (maxY - botaoNaoHeight + 1)
+        ); //height
 
-    botaoNao.style.left = aleatorioX + "px";
-    botaoNao.style.top = aleatorioY + "px";
-}
+        botaoNao.style.left = aleatorioX + "px";
+        botaoNao.style.top = aleatorioY + "px";
+      }
 
-    //it opens at the top of the page
-    function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    window.onload = scrollToTop;                
+      //it opens at the top of the page
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+      window.onload = scrollToTop;
     </script>
-</body>
+  </body>
 </html>
